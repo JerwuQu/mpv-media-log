@@ -11,11 +11,11 @@ const serialiseTSV = (data: string[][]): string => data.map(l => l.map(trimTSVCh
 
 interface LogEntry {
 	Date: string
-	Path: string
-	Progress: string
 	Title: string
+	Progress: string
+	Path: string
 }
-const COLUMN_NAMES = ['Date', 'Path', 'Progress', 'Title'];
+const COLUMN_NAMES = ['Date', 'Title', 'Progress', 'Path'];
 
 const parseLogFile = (data: string): LogEntry[] => {
 	const [cols, ...rows] = parseTSV(data);
